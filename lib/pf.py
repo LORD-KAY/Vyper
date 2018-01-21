@@ -1,6 +1,6 @@
-#!/bin/python
+
 import os
-import plaform
+import platform
 class Platform(object):
 	"""docstring for Platform"""
 	def __init__(self):
