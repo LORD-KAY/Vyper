@@ -14,4 +14,24 @@ Failure to do so will result in the library not working
 
 sleep 2
 echo "Initializing the baseline now .....";
-sleep 5
+QFILE='../lib/pf_data.py';
+python $QFILE;
+
+sleep 3
+echo "Baseline initialized ....";
+
+sleep 1
+echo "Creating required folder(s) ....";
+QDIR='../logs';
+if [[ ! -d "$QDIR" ]]; then
+	sleep 1
+	mkdir $QDIR;
+	sleep 1
+	cd $QDIR;
+	sleep 1
+	touch logdata
+fi
+sleep 8
+echo "Folder(s) successfully created";
+echo "Thank You !!";
+
