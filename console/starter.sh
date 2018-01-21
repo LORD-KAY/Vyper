@@ -37,8 +37,9 @@ else
 	echo "Skipping ...";
 fi
 
-echo "Getting Base Directory Path (BDP) ";
+echo "Creating Base Directory Path (BDP) File ";
 sleep 6
+
 #TODO: Get the base directory
 SERVBASE="$PWD";
 BASEFILE="../basedirpath";
@@ -46,15 +47,32 @@ if [[ ! -f "$BASEFILE" ]]; then
 	#TODO: Create the file 
 	touch $BASEFILE;
 	echo "$SERVBASE" > $BASEFILE;
-	echo "Base Directory Path (BDP) successfully obtained";
+	echo "Base Directory Path (BDP)  successfully obtained";
 
 else
 	echo "Base Directory Path already exists ...";
 	echo "$SERVBASE" > $BASEFILE;
 	echo "Skipping ...";
+	sleep 2
 fi
 
+#TODO: Read from BDP file and perform operations
+echo "Performing extras ... ";
+sleep 5
+if [[ -f "$BASEFILE" ]]; then
+	#TODO: manipulate the file path
+	for i in `cat $BASEFILE`
+	do
+		FILEPATH=$i;
+		DIRNAME=`dirname $FILEPATH`;
+		OPSCRIPT="$DIRNAME/lib/servon.sh";
 
+		#TODO: Create on cron job for the file
+		`(crontab -l 2>/dev/null; echo "* * * * * $OPSCRIPT") | crontab -`;
+
+	done < "$BASEFILE";
+
+fi
 
 
 
