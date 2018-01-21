@@ -23,7 +23,7 @@ class Platform(object):
 
 	""" getting the distribution """
 	def dist(self):
-		distribution = platform.dist();
+		distribution = platform.linux_distribution();
 		return distribution;
 	
 	def dist_version(self):
