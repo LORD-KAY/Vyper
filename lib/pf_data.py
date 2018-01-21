@@ -15,7 +15,7 @@ filename = '../console/stt.txt'
 try:
 	if not os.path.exists(filename):
 		with open(filename,'w+') as file:
-			file.write(distro)
+			file.write(filter_distro)
 			file.close()
 	else:
 		with open(filename,'w') as file:
