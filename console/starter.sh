@@ -37,7 +37,7 @@ else
 	echo "Skipping ...";
 fi
 
-echo "Getting Base Directory path";
+echo "Getting Base Directory Path (BDP) ";
 sleep 6
 #TODO: Get the base directory
 SERVBASE="$PWD";
@@ -46,10 +46,10 @@ if [[ ! -f "$BASEFILE" ]]; then
 	#TODO: Create the file 
 	touch $BASEFILE;
 	echo "$SERVBASE" > $BASEFILE;
-	echo "Base Directory successfully obtained";
+	echo "Base Directory Path (BDP) successfully obtained";
 
 else
-	echo "Base Directory already exists ...";
+	echo "Base Directory Path already exists ...";
 	echo "$SERVBASE" > $BASEFILE;
 	echo "Skipping ...";
 fi
