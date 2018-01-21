@@ -1,6 +1,6 @@
 import os
 import re
-from pf import Platform
+from variables import Platform
 
 init_d = Platform()
 distros  = init_d.dist()
