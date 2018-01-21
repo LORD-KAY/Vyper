@@ -30,6 +30,8 @@ if [[ ! -d "$QDIR" ]]; then
 	cd $QDIR;
 	sleep 1
 	touch logdata
+else
+	return
 fi
 sleep 8
 echo "Folder(s) successfully created";
