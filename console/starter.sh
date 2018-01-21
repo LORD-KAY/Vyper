@@ -41,7 +41,7 @@ echo "Getting Base Directory Path (BDP) ";
 sleep 6
 #TODO: Get the base directory
 SERVBASE="$PWD";
-BASEFILE="../basedir";
+BASEFILE="../basedirpath";
 if [[ ! -f "$BASEFILE" ]]; then
 	#TODO: Create the file 
 	touch $BASEFILE;
