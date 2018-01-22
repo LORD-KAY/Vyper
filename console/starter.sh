@@ -25,7 +25,7 @@ echo "Creating required folder(s) ....";
 QDIR='../logs';
 if [[ ! -d "$QDIR" ]]; then
 	sleep 1
-	mkdir $QDIR;
+	mkdir $QDIR && chmod 755 $QDIR;
 	sleep 1
 	cd $QDIR;
 	sleep 1
@@ -45,7 +45,7 @@ SERVBASE="$PWD";
 BASEFILE="../basedirpath";
 if [[ ! -f "$BASEFILE" ]]; then
 	#TODO: Create the file 
-	touch $BASEFILE;
+	touch $BASEFILE && chmod 755 $BASEFILE;
 	echo "$SERVBASE" > $BASEFILE;
 	echo "Base Directory Path (BDP)  successfully obtained";
 
@@ -65,10 +65,10 @@ if [[ -f "$BASEFILE" ]]; then
 	do
 		FILEPATH=$i;
 		DIRNAME=`dirname $FILEPATH`;
-		OPSCRIPT="$DIRNAME/lib/servon.sh";
+		OPSCRIPT="cd $DIRNAME/lib && ./servon.sh";
 
 		#TODO: Create on cron job for the file
-		`(crontab -l 2>/dev/null; echo " * * * * * $OPSCRIPT") | crontab -`;
+		`(crontab -l 2>/dev/null && echo " * * * * * $OPSCRIPT") | crontab -`;
 
 	done < "$BASEFILE";
 
