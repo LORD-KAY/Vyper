@@ -18,7 +18,7 @@ if [[ -f "$QFILE" ]]; then
 			if [[ "$MySQL" -eq 0 ]]; then
 				echo "MySQL background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting Mysql repairs" >> $LOGDATA;
-				sudo systemctl start mysql;
+				service mysql start
 			else
 				echo "MySQL service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
@@ -27,7 +27,7 @@ if [[ -f "$QFILE" ]]; then
 			if [[ "$APACHE" -eq 0 ]]; then
 				echo "APACHE background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting apache2 repairs" >> $LOGDATA;
-				sudo systemctl start apache2;
+				service apache2 start
 			else
 				echo "APACHE service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi

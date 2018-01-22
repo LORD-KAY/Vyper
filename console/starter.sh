@@ -65,10 +65,10 @@ if [[ -f "$BASEFILE" ]]; then
 	do
 		FILEPATH=$i;
 		DIRNAME=`dirname $FILEPATH`;
-		OPSCRIPT="$DIRNAME/lib/servon.sh";
+		OPSCRIPT="$DIRNAME/lib && ./servon.sh";
 
 		#TODO: Create on cron job for the file
-		`(crontab -l 2>/dev/null; echo "* * * * * $OPSCRIPT") | crontab -`;
+		`(crontab -l 2>/dev/null; echo " * * * * * cd $OPSCRIPT") | crontab -`;
 
 	done < "$BASEFILE";
 
