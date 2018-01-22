@@ -18,7 +18,7 @@ if [[ -f "$QFILE" ]]; then
 			if [[ "$MySQL" -eq 0 ]]; then
 				echo "MySQL background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting Mysql repairs" >> $LOGDATA;
-				service mysql start
+				sudo service mysql start
 			else
 				echo "MySQL service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
