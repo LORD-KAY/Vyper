@@ -22,7 +22,7 @@ Service-Monster is an application that monitors the various services running at 
   - [x] Navigate to the console folder and run the `starter.sh` as a super user or simple as root.
   	```sudo ./starter.sh```
   - [x] After the installation completes, Thats it you are good to go.
-  - [x] The Library will monitor the services every minute to check it status and provide fixes it possible
+  - [x] The Library will monitor the services every minute to check it status and provide fixes if possible
   - [x] It will create a copy of the log file and send it to the user through email ***
   - [x] To View logs, Navigate to the logs/ folder created when the installation was in progress and open the logdata file to see the log files i.e if there is any
 
