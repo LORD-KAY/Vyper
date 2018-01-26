@@ -27,6 +27,8 @@ Service-Monster is an application that monitors the various services running at 
   - [x] To View logs, Navigate to the logs/ folder created when the installation was in progress and open the logdata file to see the log files i.e if there is any
 
 # Background services implemented
+## Application Services
+## Server Services
  - [x] MySQL
  - [x] Apache2 - The latest version of apache
 
