@@ -28,6 +28,7 @@ Service-Monster is an application that monitors the various services running at 
 
 # Background services implemented
 ## Application Services
+ - [x] Network Manager
 ## Server Services
  - [x] MySQL
  - [x] Apache2 - The latest version of apache
