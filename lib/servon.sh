@@ -7,6 +7,7 @@ LOGDATA='../logs/logdata';
 ##### DEBIAN DISTROS #####
 APACHE=$(pgrep apache2 | wc -l);
 MySQL=$(pgrep mysql | wc -l);
+NETMAN=$(pgrep NetworkManager | wc -l);
 
 QFILE='../console/stt.txt';
 if [[ -f "$QFILE" ]]; then
@@ -31,6 +32,23 @@ if [[ -f "$QFILE" ]]; then
 			else
 				echo "APACHE service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
+
+			#TODO: Check the status of network manager
+			if [[ "$NETMAN" -eq 0 ]]; then
+				echo "System Network Manager service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
+				echo "Attempting Repairs ..." >> $LOGDATA;
+				sleep 3
+				netRepair="service NetworkManager start";
+				eval netRepair;
+				if [[ $? -ne 1 ]] || [[ $? -ne 126 ]]; then
+					echo "Repair Successful " >> $LOGDATA;
+				else
+					echo "Repair Unsuccessful " >> $LOGDATA;
+				fi
+			else
+				echo "System Network Manager service for $HOSTNAME - $HOSTIP running smoothly " >> 2> /dev/null;
+			fi
+
 		elif [[ "$DISTRO" -eq "centos" ]]; then
 			#TODO: Check the status of the service
 			if [[ "$APACHE" -eq 0 ]]; then
