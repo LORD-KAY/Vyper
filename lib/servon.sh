@@ -19,15 +19,7 @@ if [[ -f "$QFILE" ]]; then
 			if [[ "$MySQL" -eq 0 ]]; then
 				echo "MySQL background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting Mysql repairs" >> $LOGDATA;
-				sleep 3
-				netRepair="service mysql start";
-				eval netRepair;
-				if [[ $? -eq 1 ]] || [[ $? -eq 126 ]]; then
-				    echo "Repair Successful " >> $LOGDATA;
-				else
-				    echo "Repair Unsuccessful " >> $LOGDATA;
-				fi
-
+				sudo service mysql start
 			else
 				echo "MySQL service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
@@ -36,7 +28,7 @@ if [[ -f "$QFILE" ]]; then
 			if [[ "$APACHE" -eq 0 ]]; then
 				echo "APACHE background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting apache2 repairs" >> $LOGDATA;
-				service apache2 start
+				sudo service apache2 start
 			else
 				echo "APACHE service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
@@ -45,14 +37,7 @@ if [[ -f "$QFILE" ]]; then
 			if [[ "$NETMAN" -eq 0 ]]; then
 				echo "System Network Manager service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting Repairs ..." >> $LOGDATA;
-				sleep 3
-				netRepair="service NetworkManager start";
-				eval netRepair;
-				if [[ $? -ne 1 ]] || [[ $? -ne 126 ]]; then
-					echo "Repair Successful " >> $LOGDATA;
-				else
-					echo "Repair Unsuccessful " >> $LOGDATA;
-				fi
+				service NetworkManager start
 			else
 				echo "System Network Manager service for $HOSTNAME - $HOSTIP running smoothly " >> /dev/null 2>&1;
 			fi
