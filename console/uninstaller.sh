@@ -8,4 +8,5 @@ echo "Do you really wants to uninstall the configuration :-> (Y/y|N/n)";
 read RESPONSE;
 if [[ $RESPONSE -eq 'Y' ]] || [[ $RESPONSE -eq 'y' ]]; then
     #TODO: Perform operation by uninstalling the app
+    echo "Uninstallation will take few seconds, Please sit back and relax ... ";
 fi
