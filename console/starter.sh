@@ -3,7 +3,7 @@ APPNAME="Service Monitor v1.0.0";
 HOSTNAME=`hostname`;
 HOSTIP=`hostname -I`;
 
-echo "Welcome To Service Monster
+echo "Welcome To $APPNAME
 Follow the instructions to enjoy the library";
 echo "-----------------------------------------------";
 
