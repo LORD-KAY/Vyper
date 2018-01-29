@@ -19,7 +19,15 @@ if [[ -f "$QFILE" ]]; then
 			if [[ "$MySQL" -eq 0 ]]; then
 				echo "MySQL background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting Mysql repairs" >> $LOGDATA;
-				sudo service mysql start
+				sleep 3
+				netRepair="service mysql start";
+				eval netRepair;
+				if [[ $? -eq 1 ]] || [[ $? -eq 126 ]]; then
+				    echo "Repair Successful " >> $LOGDATA;
+				else
+				    echo "Repair Unsuccessful " >> $LOGDATA;
+				fi
+
 			else
 				echo "MySQL service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
@@ -46,7 +54,7 @@ if [[ -f "$QFILE" ]]; then
 					echo "Repair Unsuccessful " >> $LOGDATA;
 				fi
 			else
-				echo "System Network Manager service for $HOSTNAME - $HOSTIP running smoothly " >> 2> /dev/null;
+				echo "System Network Manager service for $HOSTNAME - $HOSTIP running smoothly " >> /dev/null 2>&1;
 			fi
 
 		elif [[ "$DISTRO" -eq "centos" ]]; then
