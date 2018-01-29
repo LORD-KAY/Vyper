@@ -47,17 +47,17 @@ if [[ ! -f "$BASEFILE" ]]; then
 	#TODO: Create the file 
 	touch $BASEFILE && chmod 755 $BASEFILE;
 	echo "$SERVBASE" > $BASEFILE;
-	echo "Base Directory Path (BDP)  successfully obtained";
+	echo "Base Directory Path (BDP) Successfully Obtained";
 
 else
-	echo "Base Directory Path already exists ...";
+	echo "Base Directory Path Already Exists ...";
 	echo "$SERVBASE" > $BASEFILE;
 	echo "Skipping ...";
 	sleep 2
 fi
 
 #TODO: Read from BDP file and perform operations
-echo "Performing extras ... ";
+echo "Configuring Jobs To Be Scheduled ...";
 sleep 5
 if [[ -f "$BASEFILE" ]]; then
 	#TODO: manipulate the file path
@@ -73,7 +73,6 @@ if [[ -f "$BASEFILE" ]]; then
 	done < "$BASEFILE";
 
 fi
-
 
 
 echo "Thank You !!";
