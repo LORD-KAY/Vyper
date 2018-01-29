@@ -1,4 +1,5 @@
 #!/bin/bash
+APPNAME="Service Monitor v1.0.0";
 HOSTNAME=`hostname`;
 HOSTIP=`hostname -I`;
 
@@ -73,7 +74,7 @@ if [[ -f "$BASEFILE" ]]; then
 	done < "$BASEFILE";
 
 fi
-
-
+sleep 1
+echo "$APPNAME successfully installed ...";
 echo "Thank You !!";
 
