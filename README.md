@@ -25,6 +25,7 @@ Service-Monster is an application that monitors the various services running at 
   - [x] The Library will monitor the services every minute to check it status and provide fixes if possible
   - [x] It will create a copy of the log file and send it to the user through email ***
   - [x] To View logs, Navigate to the logs/ folder created when the installation was in progress and open the logdata file to see the log files i.e if there is any
+  - [x] To Uninstall run `sudo ./uninstaller.sh` file in the console folder to revert all changes
 
 # Background services implemented
 ## Application Services
