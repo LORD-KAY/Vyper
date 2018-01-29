@@ -9,4 +9,7 @@ read RESPONSE;
 if [[ $RESPONSE -eq 'Y' ]] || [[ $RESPONSE -eq 'y' ]]; then
     #TODO: Perform operation by uninstalling the app
     echo "Uninstallation will take few seconds, Please sit back and relax ... ";
+elif [[ $RESPONSE -eq 'N' ]] || [[ $RESPONSE -eq 'n' ]]; then
+    #TODO: Exist uninstalling operation
+    exit;
 fi
