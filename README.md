@@ -1,5 +1,5 @@
-# Service-Monster
-Service-Monster is an application that monitors the various services running at the background of your system and provide fixes if it can as well as crush reports. Some of the service include mysql,apache2,mariadb-service and others.
+# Vyper
+Vyper is an library that monitors the various services running at the background of your system and provide fixes if it can as well as crush reports. Some of the service include mysql,apache2,mariadb-service and others.
 
 # How to Use the Library
  - [x] Either Clone or Download the repository from ```https://github.com/LORD-KAY/Service-Monitor```
