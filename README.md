@@ -47,5 +47,5 @@ Vyper is an library that monitors the various services running at the background
 # More Features
  - Just Getting Started with the library
 # Contacts
- - [x] [Github Repository] https://github.com/LORD-KAY/Service-Monitor
+ - [x] [https://github.com/LORD-KAY/Vyper] https://github.com/LORD-KAY/Vyper
  - [x] [ Email Address ] offeilord@gmail.com
