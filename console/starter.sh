@@ -3,6 +3,9 @@ APPNAME="Vyper v1.0.0-beta";
 HOSTNAME=`hostname`;
 HOSTIP=`hostname -I`;
 
+#TODO: Mailer Live - Check if mailutils is installed on the local machine or available on the server
+MAIL_TO="";
+
 echo "Welcome To $APPNAME
 Follow the instructions to enjoy the library";
 echo "-----------------------------------------------";
