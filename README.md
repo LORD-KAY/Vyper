@@ -30,14 +30,18 @@ Vyper is an library that monitors the various services running at the background
 # Background services implemented
 ## Application Services
  - [x] Network Manager
+ - [x] Pulse Audio (Ubuntu Specific)
 ## Server Services
  - [x] MySQL
  - [x] Apache2 - The latest version of apache
 
 # Platform Support
  - [x] Debian eg.Ubuntu , elementary etc.
- - [x] Linux eg. CentOs
-
+ - [x] Linux eg. CentOs, Red Hat (RHEL) , Fedora
+ 
+# Upcoming Release
+ - [x] Mailer live - Notification master
+ 
 # Release
  - [x] Pre-release Now Out
  - [x] Stable release to be out soon
