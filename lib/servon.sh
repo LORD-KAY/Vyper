@@ -82,6 +82,9 @@ if [[ -f "$QFILE" ]]; then
 			if [[ "$lNETMAN" -eq 0 ]]; then
 			    echo "Network Manager background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 			    echo "Attempting Network Repairs .. " >> $LOGDATA;
+			    sudo systemctl start network.service;
+			else
+			    echo "Network Manager Running Smoothly " >> /dev/null 2>&1;
 			fi
 			
 		fi
