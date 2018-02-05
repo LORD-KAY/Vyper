@@ -11,7 +11,7 @@ QDIR="../logs";
 TIMER=100;
 counter=0;
 ##TODO: Check if user wants to delete the library
-read -p "Do you really wants to uninstall the configuration :-> (Y/y|N/n)" RESPONSE;
+read -p "Do you really wants to uninstall these configurations :-> (Y/y|N/n)" RESPONSE;
 case $RESPONSE in
      [Yy]* )
      #TODO;Perform operation by uninstalling the app
