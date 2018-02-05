@@ -8,6 +8,7 @@ LOGDATA='../logs/logdata';
 #TODO: LINUX SPECIFIC -- RHEL,CENTOS,FEDORA
 lAPACHE=$(pgrep httpd | wc -l);
 lMySQL=$(pgrep mysqld | wc -l);
+lNETMAN=$(pgrep network | wc -l);
 ##### DEBIAN DISTROS #####
 #TODO: UBUNTU SPECIFIC -- ELEMENTARY,UBUNTU ..
 uPULSE=$(pgrep pulseaudio | wc -l);
