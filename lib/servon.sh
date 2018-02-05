@@ -4,10 +4,10 @@ HOSTIP=`hostname -I`;
 LOGDATA='../logs/logdata';
 
 ##TODO: DECLARATION OF THE SERVICES
-#TODO: UBUNTU SPECIFIC
+#TODO: UBUNTU SPECIFIC -- ELEMENTARY,UBUNTU ..
 PULSEAUDIO=$(pgrep pulseaudio | wc -l);
-#TODO: LINUX SPECIFIC
-lAPACHE=$();
+#TODO: LINUX SPECIFIC -- RHEL,CENTOS,FEDORA
+lAPACHE=$(pgrep httpd | wc -l);
 lMySQL=$(pgrep mysqld | wc -l);
 ##### DEBIAN DISTROS #####
 uAPACHE=$(pgrep apache2 | wc -l);
