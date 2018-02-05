@@ -4,14 +4,14 @@ from variables import Platform
 
 init_d = Platform()
 distros  = init_d.dist()
-directory = 'console/stt.txt'
+directory = 'console/os.txt'
 
-# Getting the distro from the distros 
+# Getting the distro from the distros
 distro = distros[0]
 regex_exp = re.compile(r'\"')
 filter_distro = regex_exp.sub('',distro)
 
-filename = '../console/stt.txt'
+filename = '../console/os.txt'
 try:
 	if not os.path.exists(filename):
 		with open(filename,'w+') as file:
@@ -24,5 +24,3 @@ try:
 except Exception as e:
 	raise e
 	print("Could not open file for writing ..")
-
-
