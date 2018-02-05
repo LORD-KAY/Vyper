@@ -24,7 +24,7 @@ if [[ -f "$QFILE" ]]; then
 	for i in `cat $QFILE`
 	do
 		DISTRO=$i;
-		if [[ "$DISTRO" -eq "elementary" ]] || [[ "$DISTRO" -eq "ubuntu" ]]; then
+		if [[ "$DISTRO" == "elementary" ]] || [[ "$DISTRO" == "ubuntu" ]]; then
 			#TODO: Check the status of MYSQL
 			if [[ "$uMySQL" -eq 0 ]]; then
 				echo "MySQL background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
@@ -64,7 +64,7 @@ if [[ -f "$QFILE" ]]; then
 
 			    fi
 			fi
-		elif [[ "$DISTRO" -eq "centos" ]] || [[ "$DISTRO" -eq "rhel" ]] || [[ "$DISTRO" -eq "fedora" ]]; then
+		elif [[ "$DISTRO" == "centos" ]] || [[ "$DISTRO" == "rhel" ]] || [[ "$DISTRO" == "fedora" ]]; then
 			#TODO: Check the status of the service
 			if [[ "$lAPACHE" -eq 0 ]]; then
 				echo "APACHE background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
@@ -89,7 +89,7 @@ if [[ -f "$QFILE" ]]; then
 			else
 			    echo "Network Manager Running Smoothly " >> /dev/null 2>&1;
 			fi
-			
+
 		fi
 	done < "$QFILE";
 fi
