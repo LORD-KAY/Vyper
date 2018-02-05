@@ -8,6 +8,7 @@ FULLDATA=`uname`;
 SERVBASE="$PWD";
 BASEFILE="../basedirpath";
 QDIR="../logs";
+WTFILE="os.txt";
 TIMER=100;
 counter=0;
 ##TODO: Check if user wants to delete the library
