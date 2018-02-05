@@ -9,6 +9,9 @@ APACHE=$(pgrep apache2 | wc -l);
 MySQL=$(pgrep mysql | wc -l);
 NETMAN=$(pgrep NetworkManager | wc -l);
 
+######### UBUNTU SPECIFIC ############
+PULSEAUDIO=$(pgrep pulseaudio | wc -l);
+
 QFILE='../console/stt.txt';
 if [[ -f "$QFILE" ]]; then
 	for i in `cat $QFILE`
@@ -59,6 +62,10 @@ if [[ -f "$QFILE" ]]; then
 			else
 				echo "MySQL service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
+
+		elif [[ "$DISTRO" -eq "fedora" ]]; then
+		    #TODO: Check and restart apache service
+
 			
 		fi
 	done < "$QFILE";
