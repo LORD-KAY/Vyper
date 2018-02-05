@@ -16,12 +16,14 @@ Failure to do so will result in the library not working
 sleep 2
 echo "Initializing the baseline now .....";
 #TODO:Checking if write-to-file is available
-$WTFILE = 'os.txt';
-if [[ -f ]]; then
+WTFILE = 'os.txt';
+if [[ ! -f "$WTFILE" ]]; then
+    sleep 2
+    touch $WTFILE && chmod 755 $WTFILE
+
     
 fi
-QFILE='../lib/write_to_file.py';
-python $QFILE;
+
 
 sleep 3
 echo "Baseline initialized ....";
