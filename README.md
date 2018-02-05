@@ -1,5 +1,5 @@
-# Service-Monster
-Service-Monster is an application that monitors the various services running at the background of your system and provide fixes if it can as well as crush reports. Some of the service include mysql,apache2,mariadb-service and others.
+# Vyper
+Vyper is an library that monitors the various services running at the background of your system and provide fixes if it can as well as crash reports. Some of the services include mysql,apache2,mariadb-service and others.
 
 # How to Use the Library
  - [x] Either Clone or Download the repository from ```https://github.com/LORD-KAY/Service-Monitor```
@@ -25,6 +25,7 @@ Service-Monster is an application that monitors the various services running at 
   - [x] The Library will monitor the services every minute to check it status and provide fixes if possible
   - [x] It will create a copy of the log file and send it to the user through email ***
   - [x] To View logs, Navigate to the logs/ folder created when the installation was in progress and open the logdata file to see the log files i.e if there is any
+  - [x] To Uninstall run `sudo ./uninstaller.sh` file in the console folder to revert all changes
 
 # Background services implemented
 ## Application Services
@@ -46,5 +47,5 @@ Service-Monster is an application that monitors the various services running at 
 # More Features
  - Just Getting Started with the library
 # Contacts
- - [x] [Github Repository] https://github.com/LORD-KAY/Service-Monitor
+ - [x] [ Github Repository ] https://github.com/LORD-KAY/Vyper
  - [x] [ Email Address ] offeilord@gmail.com
