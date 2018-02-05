@@ -78,6 +78,11 @@ if [[ -f "$QFILE" ]]; then
 			else
 				echo "MySQL service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
+
+			if [[ "$lNETMAN" -eq 0 ]]; then
+			    echo "Network Manager background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
+			    echo "Attempting Network Repairs .. " >> $LOGDATA;
+			fi
 			
 		fi
 	done < "$QFILE";
