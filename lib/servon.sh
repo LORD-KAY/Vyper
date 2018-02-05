@@ -21,7 +21,7 @@ if [[ -f "$QFILE" ]]; then
 		DISTRO=$i;
 		if [[ "$DISTRO" -eq "elementary" ]] || [[ "$DISTRO" -eq "ubuntu" ]]; then
 			#TODO: Check the status of MYSQL
-			if [[ "$MySQL" -eq 0 ]]; then
+			if [[ "$uMySQL" -eq 0 ]]; then
 				echo "MySQL background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting Mysql repairs" >> $LOGDATA;
 				sudo service mysql start
@@ -30,7 +30,7 @@ if [[ -f "$QFILE" ]]; then
 			fi
 
 			#TODO: Check the status of apache2
-			if [[ "$APACHE" -eq 0 ]]; then
+			if [[ "$uAPACHE" -eq 0 ]]; then
 				echo "APACHE background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting apache2 repairs" >> $LOGDATA;
 				sudo service apache2 start
@@ -39,7 +39,7 @@ if [[ -f "$QFILE" ]]; then
 			fi
 
 			#TODO: Check the status of network manager
-			if [[ "$NETMAN" -eq 0 ]]; then
+			if [[ "$uNETMAN" -eq 0 ]]; then
 				echo "System Network Manager service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting Repairs ..." >> $LOGDATA;
 				service NetworkManager start
@@ -49,7 +49,7 @@ if [[ -f "$QFILE" ]]; then
 
 		elif [[ "$DISTRO" -eq "centos" ]] || [[ "$DISTRO" -eq "rhel" ]] || [[ "$DISTRO" -eq "fedora" ]]; then
 			#TODO: Check the status of the service
-			if [[ "$APACHE" -eq 0 ]]; then
+			if [[ "$lAPACHE" -eq 0 ]]; then
 				echo "APACHE background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting apache2 repairs" >> $LOGDATA;
 				sudo service httpd start;
@@ -57,7 +57,7 @@ if [[ -f "$QFILE" ]]; then
 				echo "APACHE service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
 
-			if [[ "$MySQL" -eq 0 ]]; then
+			if [[ "$lMySQL" -eq 0 ]]; then
 				echo "MySQL background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting Mysql repairs" >> $LOGDATA;
 				sudo systemctl start mysqld;
