@@ -16,6 +16,9 @@ uAPACHE=$(pgrep apache2 | wc -l);
 uMySQL=$(pgrep mysql | wc -l);
 uNETMAN=$(pgrep NetworkManager | wc -l);
 
+#TODO: Mailer Live
+MAIL_TO="";
+
 QFILE='../console/stt.txt';
 if [[ -f "$QFILE" ]]; then
 	for i in `cat $QFILE`
