@@ -3,14 +3,16 @@ HOSTNAME=`hostname`;
 HOSTIP=`hostname -I`;
 LOGDATA='../logs/logdata';
 
-## DECLARATION OF THE SERVICES
+##TODO: DECLARATION OF THE SERVICES
+#TODO: UBUNTU SPECIFIC
+PULSEAUDIO=$(pgrep pulseaudio | wc -l);
+#TODO: LINUX SPECIFIC
+lMySQL=$(pgrep
+
 ##### DEBIAN DISTROS #####
 APACHE=$(pgrep apache2 | wc -l);
 MySQL=$(pgrep mysql | wc -l);
 NETMAN=$(pgrep NetworkManager | wc -l);
-
-######### UBUNTU SPECIFIC ############
-PULSEAUDIO=$(pgrep pulseaudio | wc -l);
 
 QFILE='../console/stt.txt';
 if [[ -f "$QFILE" ]]; then
@@ -45,7 +47,7 @@ if [[ -f "$QFILE" ]]; then
 				echo "System Network Manager service for $HOSTNAME - $HOSTIP running smoothly " >> /dev/null 2>&1;
 			fi
 
-		elif [[ "$DISTRO" -eq "centos" ]]; then
+		elif [[ "$DISTRO" -eq "centos" ]] || [[ "$DISTRO" -eq "rhel" ]] || [[ "$DISTRO" -eq "fedora" ]]; then
 			#TODO: Check the status of the service
 			if [[ "$APACHE" -eq 0 ]]; then
 				echo "APACHE background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
@@ -62,10 +64,6 @@ if [[ -f "$QFILE" ]]; then
 			else
 				echo "MySQL service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
-
-		elif [[ "$DISTRO" -eq "fedora" ]]; then
-		    #TODO: Check and restart apache service
-
 			
 		fi
 	done < "$QFILE";
