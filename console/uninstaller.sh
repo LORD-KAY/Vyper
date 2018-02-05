@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-APPNAME="Service Monitor v1.0.0";
+APPNAME="Vyper v1.0.0-beta";
 HOSTNAME=`hostname`;
 HOSTIP=`hostname -I`;
 FULLDATA=`uname`;
