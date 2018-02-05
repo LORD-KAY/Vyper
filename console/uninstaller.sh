@@ -44,6 +44,11 @@ case $RESPONSE in
      fi
      sleep 1
      echo "Removing Created Baseline ...";
+     if [[ -f "$WTFILE" ]]; then
+         rm $WTFILE;
+     else
+        echo "No Existence of base os filename" > /dev/null 2>&1; #This is to silence the output cos the file is vital
+     fi
      sleep 2
      echo "Baseline Uninitialized ..";
      sleep 1
