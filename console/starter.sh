@@ -15,6 +15,11 @@ Failure to do so will result in the library not working
 
 sleep 2
 echo "Initializing the baseline now .....";
+#TODO:Checking if write-to-file is available
+$WTFILE = 'os.txt';
+if [[ -f ]]; then
+    
+fi
 QFILE='../lib/write_to_file.py';
 python $QFILE;
 
