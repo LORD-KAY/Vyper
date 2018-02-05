@@ -4,12 +4,13 @@ HOSTIP=`hostname -I`;
 LOGDATA='../logs/logdata';
 
 ##TODO: DECLARATION OF THE SERVICES
-#TODO: UBUNTU SPECIFIC -- ELEMENTARY,UBUNTU ..
-PULSEAUDIO=$(pgrep pulseaudio | wc -l);
+
 #TODO: LINUX SPECIFIC -- RHEL,CENTOS,FEDORA
 lAPACHE=$(pgrep httpd | wc -l);
 lMySQL=$(pgrep mysqld | wc -l);
 ##### DEBIAN DISTROS #####
+#TODO: UBUNTU SPECIFIC -- ELEMENTARY,UBUNTU ..
+uPULSE=$(pgrep pulseaudio | wc -l);
 uAPACHE=$(pgrep apache2 | wc -l);
 uMySQL=$(pgrep mysql | wc -l);
 uNETMAN=$(pgrep NetworkManager | wc -l);
@@ -47,6 +48,18 @@ if [[ -f "$QFILE" ]]; then
 				echo "System Network Manager service for $HOSTNAME - $HOSTIP running smoothly " >> /dev/null 2>&1;
 			fi
 
+			#TODO: Check and start the service of pulse audio
+			pavu=`pgrep pulseaudio`;
+			if [[ "$pavu" == " " ]]; then
+			    echo "Process ID Not Found for Pulse Audio. May be that is it is not installed " >> /dev/null 2>&1;
+			else
+			    if [[ "$uPULSE" -eq 0 ]]; then
+			        echo "PULSE AUDIO background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
+			        echo "Attempting Repairs ..." >> $LOGDATA;
+			        #TODO: service start will be here
+
+			    fi
+			fi
 		elif [[ "$DISTRO" -eq "centos" ]] || [[ "$DISTRO" -eq "rhel" ]] || [[ "$DISTRO" -eq "fedora" ]]; then
 			#TODO: Check the status of the service
 			if [[ "$lAPACHE" -eq 0 ]]; then
