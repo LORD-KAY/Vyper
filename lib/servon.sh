@@ -7,12 +7,12 @@ LOGDATA='../logs/logdata';
 #TODO: UBUNTU SPECIFIC
 PULSEAUDIO=$(pgrep pulseaudio | wc -l);
 #TODO: LINUX SPECIFIC
-lMySQL=$(pgrep
-
+lAPACHE=$();
+lMySQL=$(pgrep mysqld | wc -l);
 ##### DEBIAN DISTROS #####
-APACHE=$(pgrep apache2 | wc -l);
-MySQL=$(pgrep mysql | wc -l);
-NETMAN=$(pgrep NetworkManager | wc -l);
+uAPACHE=$(pgrep apache2 | wc -l);
+uMySQL=$(pgrep mysql | wc -l);
+uNETMAN=$(pgrep NetworkManager | wc -l);
 
 QFILE='../console/stt.txt';
 if [[ -f "$QFILE" ]]; then
@@ -52,7 +52,7 @@ if [[ -f "$QFILE" ]]; then
 			if [[ "$APACHE" -eq 0 ]]; then
 				echo "APACHE background service for $HOSTNAME - $HOSTIP stopped at `date`" >> $LOGDATA;
 				echo "Attempting apache2 repairs" >> $LOGDATA;
-				sudo systemctl start apache2;
+				sudo service httpd start;
 			else
 				echo "APACHE service for $HOSTNAME - $HOSTIP running smoothly" >> /dev/null 2>&1;
 			fi
