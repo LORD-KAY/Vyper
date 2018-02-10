@@ -6,19 +6,19 @@ Vyper is a library that monitors the various services running at the background 
  - [x] eg. ```git clone https://github.com/LORD-KAY/Service-Monitor.git```
  - [x] Extract it to your favorite directory i.e It being your Document, Home Directory etc.
  - [x] After Extraction - The Structure looks like this 
- 	```Service-Monitor/
- 					 console/
- 					 		starter.sh
-         uninstaller.sh
- 					 lib/
- 					 	servon.sh
- 					 	variables.py
- 					 	write_to_file.py
- 					 test/
- 					 	..Contains the test files
- 					 .gitignore
- 					 .LICENSE
- 					 .README.md
+      `Service-Monitor/
+           console/
+             starter.sh
+             uninstaller.sh
+           lib/
+            servon.sh
+            variables.py
+            write_to_file.py
+           test/
+            ..Contains t``he test files
+           .gitignore
+           .LICENSE
+           .README.md
  	```
   - [x] Navigate to the console folder and run the `starter.sh` as a super user or simple as root.
   	```sudo ./starter.sh```
