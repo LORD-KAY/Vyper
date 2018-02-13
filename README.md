@@ -9,6 +9,7 @@ Vyper is an library that monitors the various services running at the background
  	```Service-Monitor/
  					 console/
  					 		starter.sh
+ 					 		uninstaller.sh
  					 lib/
  					 	servon.sh
  					 	variables.py
