@@ -2,8 +2,8 @@
 Vyper is a library that monitors the various services running at the background of your system and provide fixes if it can as well as crash reports. Some of the services include mysql,apache2,mariadb-service and others.
 
 # How to Use the Library
- - [x] Either Clone or Download the repository from ```https://github.com/LORD-KAY/Service-Monitor```
- - [x] eg. ```git clone https://github.com/LORD-KAY/Service-Monitor.git```
+ - [x] Either Clone or Download the repository from ```https://github.com/LORD-KAY/Vyper```
+ - [x] eg. ```git clone https://github.com/LORD-KAY/Vyper.git```
  - [x] Extract it to your favorite directory i.e It being your Document, Home Directory etc.
  - [x] After Extraction - The Structure looks like this 
    ``` Service-Monitor/
