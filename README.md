@@ -1,5 +1,5 @@
 # Vyper
-Vyper is a library that monitors the various services running at the background of your system and provide fixes if it can as well as crash reports. Some of the services include mysql,apache2,mariadb-service and others.
+:saxophone: Vyper is a library that monitors the various services running at the background of your system and provide fixes if it can as well as crash reports. Some of the services include mysql,apache2,mariadb-service and others.
 
 # How to Use the Library
  - [x] Either Clone or Download the repository from ```https://github.com/LORD-KAY/Vyper```
